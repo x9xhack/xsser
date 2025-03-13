@@ -41,11 +41,10 @@ setup(
     name = "xsser",
     version = "1.8.4",
     packages = ['core', 'core.fuzzing', 'core.post', 'core.driver'],
-    data_files = [('/usr/share/doc/xsser/', doc_files), 
-                  ('/usr/share/xsser/gtk/images/', data_files),
-                  ('/usr/share/xsser/gtk/docs/', gtk_doc_files),
-                  ('/usr/share/applications/', gtk_app_files),
-                  ('/usr/share/xsser/gtk/', gtk_files)],
+    package_data = {
+        'core.fuzzing': ['fuzzing/*.txt'],
+        'gtk': ['images/*', 'docs/*', 'xsser.ui', 'xsser.desktop'],
+    }
     scripts = ['xsser'],
     test_suite = "tests"
 )
