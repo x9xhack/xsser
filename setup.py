@@ -24,9 +24,9 @@ from setuptools import setup, find_packages
 setup(
     name="xsser",
     version="1.8.4",
-    packages=find_packages(include=['core', 'core.*']),
+    packages=find_packages(include=["core", "core.*"]),
     package_data={
-        "core.fuzzing": ["fuzzing/*.txt"],  # Ensures user-agents.txt is included
+        "core": ["fuzzing/*"],
         "gtk": ["images/*", "docs/*", "xsser.ui", "xsser.desktop"],
     },
     include_package_data=True,
@@ -43,6 +43,6 @@ setup(
         "gobject",
         "pycurl",
         "pygeoip",
-        "selenium"
+        "selenium",
     ],
 )

@@ -47,10 +47,11 @@ class Curl:
     followred = 0
     fli = None
     agents = [] # user-agents
+    base_path = os.path.dirname(os.path.abspath(__file__))
     try:
-        f = open("core/fuzzing/user-agents.txt").readlines() # set path for user-agents
+        f = open(os.path.join(base_path, "core/fuzzing/user-agents.txt")).readlines() # set path for user-agents
     except:
-        f = open("fuzzing/user-agents.txt").readlines() # set path for user-agents when testing
+        f = open(os.path.join(base_path, "fuzzing/user-agents.txt")).readlines() # set path for user-agents when testing
     for line in f:
         agents.append(line)
     agent = random.choice(agents).strip() # set random user-agent
